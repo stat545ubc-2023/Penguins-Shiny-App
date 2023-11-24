@@ -6,6 +6,7 @@ library(DT)
 penguins <- read.csv("penguins.csv", stringsAsFactors = FALSE)
 
 ui <- fluidPage(
+#This is writing the title for the app 
   titlePanel("Penguins Shiny App", windowTitle = "Penguins Shiny App"), 
   sidebarLayout(
 #This feature is allowing the user to filter the data by the Body Mass and the Species of the penguins. For the species, they can search for multiple entries simultaneously to look at data for any single or combination of penguin species.    
@@ -24,6 +25,7 @@ ui <- fluidPage(
 )
 
 server <- function(input, output) {
+#This is creating a histogram of the distribution of body mass which can be filtered by the body mass of the penguins, and the species of penguin
   output$plot <- renderPlot({
     filtered <- 
       penguins %>% 
@@ -35,6 +37,7 @@ server <- function(input, output) {
       geom_histogram()
   }
   )
+#This is creating a table of the penguins data, which can also be filtered by body mass and species, and is interactive and has a search function for the users 
   output$results <- DT::renderDataTable({
     filtered <- 
       penguins %>%
