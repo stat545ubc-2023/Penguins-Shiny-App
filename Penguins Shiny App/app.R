@@ -9,8 +9,8 @@ ui <- fluidPage(
   titlePanel("Penguins Shiny App", windowTitle = "Penguins Shiny App"), 
   sidebarLayout(
 #This feature is allowing the user to filter the data by the Body Mass and the Species of the penguins. For the species, they can search for multiple entries simultaneously to look at data for any single or combination of penguin species.    
-    sidebarPanel(sliderInput("body_mass_g", "Body Mass", min = 0, max = 7000, value = c(25, 40), pre = "g"),
-                 checkboxGroupInput("species", "Species", choices = c("Adelie", "Chinstrap", "Gentoo"))
+    sidebarPanel(sliderInput("body_mass_g", "Body Mass", min = 0, max = 7000, value = c(2000, 5000), pre = "g"),
+                 checkboxGroupInput("species", "Species", choices = c("Adelie", "Chinstrap", "Gentoo"), selected = "Adelie")
                  ), 
     mainPanel(
 #This feature is creating separate tabs for the plot and the table, allowing the user to select how they would like to view the data. 
