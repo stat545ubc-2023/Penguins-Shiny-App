@@ -3,7 +3,7 @@ library(ggplot2)
 library(dplyr)
 library(DT)
 
-penguins <- read.csv("C:\\Users\\2000h\\Documents\\Penguins-Shiny-App\\Penguins Shiny App\\penguins.csv", stringsAsFactors = FALSE)
+penguins <- read.csv("penguins.csv", stringsAsFactors = FALSE)
 
 ui <- fluidPage(
   titlePanel("Penguins Shiny App", windowTitle = "Penguins Shiny App"), 
